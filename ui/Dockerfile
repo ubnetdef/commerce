@@ -1,4 +1,4 @@
-FROM node:lts-alpine AS node-stage
+FROM node:16-alpine AS node-stage
 
 WORKDIR /opt/app
 RUN chown node:node /opt/app
