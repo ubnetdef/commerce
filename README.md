@@ -15,7 +15,7 @@ To deploy, we push the images to ghcr
 
 instructions are at https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry
 
-To build the containers use
+To build and push the containers use
 ```sh
 docker build -t ghcr.io/ubnetdef/commerce-api:latest
 docker push ghcr.io/ubnetdef/commerce-api:latest
