@@ -7,7 +7,7 @@ from ldfinance.users import models
 @admin.register(models.User)
 class UserAdmin(BaseUserAdmin):
     fieldsets = (
-        (None, {"fields": ("password",)}),
+        (None, {"fields": ("username", "password")}),
         (
             "Permissions",
             {
@@ -28,6 +28,7 @@ class UserAdmin(BaseUserAdmin):
             {
                 "classes": ("wide",),
                 "fields": (
+                    "username",  # <-- add this
                     "password1",
                     "password2",
                 ),
