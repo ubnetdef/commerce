@@ -17,9 +17,9 @@ instructions are at https://docs.github.com/en/packages/working-with-a-github-pa
 
 To build and push the containers use
 ```sh
-docker build -t ghcr.io/ubnetdef/commerce-api:latest
+docker build -t ghcr.io/ubnetdef/commerce-api:latest .
 docker push ghcr.io/ubnetdef/commerce-api:latest
 
-docker build -t ghcr.io/ubnetdef/commerce-ui:latest
-docker psuh ghcr.io/ubnetdef/commerce-ui:latest
+docker build -t ghcr.io/ubnetdef/commerce-ui:latest .
+docker push ghcr.io/ubnetdef/commerce-ui:latest
 ```
