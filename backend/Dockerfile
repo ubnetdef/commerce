@@ -28,7 +28,7 @@ RUN pipenv install --ignore-pipfile
 
 COPY --chown=$UNAME:$UNAME . .
 
-RUN mkdir static; ./manage.py collectstatic
+RUN mkdir static; python manage.py collectstatic
 
 EXPOSE 8000
 
