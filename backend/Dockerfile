@@ -32,4 +32,4 @@ RUN mkdir static; python manage.py collectstatic
 
 EXPOSE 8000
 
-CMD ["daphne", "-b", "0.0.0.0", "ldfinance.asgi:application"]
+CMD ["entrypoint.sh"]
