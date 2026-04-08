@@ -20,13 +20,19 @@ services:
   backend:
     build:
       context: ./backend
-    command: python manage.py runserver 0.0.0.0:8000
+    command: sh -c "python manage.py migrate && python manage.py createsuperuser --noinput && python manage.py runserver 0.0.0.0:8000"
     # depends_on:
     #   - postgres
     # env_file:
     #   - ./backend.env
     ports:
       - "8000:8000"
+    environment:
+      - DJANGO_SUPERUSER_USERNAME=admin
+      - DJANGO_SUPERUSER_PASSWORD=admin
+      - DATABASE_URL=sqlite:////opt/app/db.sqlite3
+    volumes:
+       - ./db.sqlite3:/opt/app/db.sqlite3
     # volumes:
     #   - ./backend/ldfinance:/opt/app/ldfinance
 
