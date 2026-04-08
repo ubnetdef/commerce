@@ -14,28 +14,28 @@ services:
       target: node-stage
     ports:
       - "8080:8080"
-    volumes:
-      - ./ui/src:/opt/app/src:ro
+    # volumes:
+    #   - ./ui/src:/opt/app/src:ro
 
   backend:
     build:
       context: ./backend
-    command: ./manage.py runserver 0.0.0.0:8000
-    depends_on:
-      - postgres
-    env_file:
-      - ./backend.env
+    command: python manage.py runserver 0.0.0.0:8000
+    # depends_on:
+    #   - postgres
+    # env_file:
+    #   - ./backend.env
     ports:
       - "8000:8000"
-    volumes:
-      - ./backend/ldfinance:/opt/app/ldfinance
+    # volumes:
+    #   - ./backend/ldfinance:/opt/app/ldfinance
 
-  postgres:
-    image: postgres:13-alpine
-    env_file:
-      - ./postgres.env
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
+  # postgres:
+  #   image: postgres:13-alpine
+  #   env_file:
+  #     - ./postgres.env
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
 
-volumes:
-  postgres_data:
+# volumes:
+#   postgres_data:
